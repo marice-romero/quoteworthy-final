@@ -10,7 +10,7 @@ const filterOptions = [
 ];
 const Filter = ({ params, setParams, setIsFiltered }) => {
   const handleFilter = (e) => {
-    setParams({ ...params, sourceType: e.target.value });
+    setParams({ ...params, page: 1, sourceType: e.target.value });
     setIsFiltered(true);
   };
 

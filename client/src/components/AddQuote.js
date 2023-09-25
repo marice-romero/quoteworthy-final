@@ -31,8 +31,6 @@ const AddQuote = ({
     };
   }
 
-  console.log(currentQuote);
-
   const [newQuote, setNewQuote] = useState(initialValues);
   const [currentTags, setCurrentTags] = useState(currentQuote.tags);
 
@@ -72,11 +70,9 @@ const AddQuote = ({
     deleteQuote(currentQuote._id);
   };
 
-  console.log(newQuote);
   const handleAddSubmit = (e) => {
     e.preventDefault();
     if (mode === "add") {
-      console.log("block hit");
       addQuote(newQuote);
       setCurrentTags([]);
       setNewQuote({
@@ -88,7 +84,6 @@ const AddQuote = ({
       });
     }
     if (mode === "edit") {
-      console.log("block hit");
       editQuote(newQuote);
       setCurrentTags([]);
       setNewQuote({
