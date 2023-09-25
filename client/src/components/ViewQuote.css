@@ -1,0 +1,19 @@
+.view-quote-container,
+.add-quote-container {
+  background-color: var(--main-div-color);
+  width: 70%;
+  margin: auto;
+  margin-top: 2rem;
+  padding-top: 0.5rem;
+}
+
+.single-quote-container {
+  width: 85%;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.single-quote-container li {
+  font-size: 0.75rem;
+  margin-right: 0.5rem;
+}

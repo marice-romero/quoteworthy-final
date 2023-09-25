@@ -1,0 +1,19 @@
+/* * {
+  font-family: "Special Elite";
+} */
+
+:root {
+  --toastify-font-family: inherit;
+  --text-color: black;
+  --highlight-color: #de9e36;
+  --background-color: #eef0f2;
+  --main-div-color: #474448;
+}
+
+input {
+  font-family: "Special Elite";
+}
+
+input:focus {
+  outline: none;
+}

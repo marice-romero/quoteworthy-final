@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Special Elite";
+  background-color: #eef0f2;
+}
+
+button {
+  font-family: "Special Elite";
+  background-color: var(--background-color);
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.cover-page {
+  background-image: url("./assets/books.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.both-container {
+  margin: auto;
+  width: 80%;
+  /* height: 60%; */
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.blurb-container,
+.register-container,
+.sign-in-container {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
+  width: 30%;
+  height: 100%;
+  border-radius: 30px;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border: 1px solid black;
+  color: #ececec;
+  justify-content: center;
+}
+
+.cover-page h1 {
+  text-align: center;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.sign-in-container {
+  height: 40%;
+}
