@@ -104,14 +104,13 @@ const AddQuote = ({
       {mode === "add" ? (
         <h1>add a quote</h1>
       ) : (
-        <div>
-          <button className="delete-button" onClick={handleDelete}>
-            delete quote
-          </button>
+        <div className="edit-header">
           <h3>edit quote</h3>
-
           <button className="cancel-button" onClick={handleCancelEdit}>
             cancel edit
+          </button>
+          <button className="delete-button" onClick={handleDelete}>
+            delete quote
           </button>
         </div>
       )}
