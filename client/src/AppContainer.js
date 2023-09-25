@@ -6,7 +6,7 @@ const AppContainer = () => {
   const [user, setUser] = useState(null);
   const [quotes, setQuotes] = useState([]);
   const [hitCount, setHitCount] = useState(0);
-  const [params, setParams] = useState({});
+  const [params, setParams] = useState({ page: 1 });
   const [currentQuote, setCurrentQuote] = useState({
     quoteText: "",
     source: "",
@@ -39,9 +39,6 @@ const AppContainer = () => {
       if (response.status === 201) {
         toast.success("success! welcome to quoteworthy!");
         localStorage.setItem("token", data.token);
-        // showing.style.display = "none";
-        // thisEvent = new Event("startDisplay");
-        // document.dispatchEvent(thisEvent);
         setUser(newUser);
         return data;
       } else {

@@ -5,7 +5,7 @@ import "./QuoteItem.css";
 
 const QuoteItem = ({ quote, params, setParams, setIsFiltered, view }) => {
   const handleTagClick = ({ currentTarget: input }) => {
-    setParams({ ...params, tag: input.name });
+    setParams({ ...params, page: 1, tag: input.name });
     setIsFiltered(true);
   };
 

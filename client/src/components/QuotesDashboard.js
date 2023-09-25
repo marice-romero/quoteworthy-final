@@ -3,8 +3,8 @@ import { useNavigate, Link } from "react-router-dom";
 import Search from "./Search";
 import Filter from "./Filter";
 import Sort from "./Sort";
+import Pagination from "./Pagination";
 import QuotesList from "./QuotesList";
-import pencils from "../assets/pencils.jpg";
 import "./QuotesDashboard.css";
 
 const QuotesDashboard = ({
@@ -30,11 +30,11 @@ const QuotesDashboard = ({
   });
 
   useEffect(() => {
-    setParams({});
+    setParams({ page: 1 });
   }, [setParams]);
 
   const resetParams = () => {
-    setParams({});
+    setParams({ page: 1 });
     setIsFiltered(false);
     setIsSearched(false);
   };
@@ -79,6 +79,11 @@ const QuotesDashboard = ({
         </div>
 
         <div className="quotes-container">
+          <Sort
+            params={params}
+            setParams={setParams}
+            fetchQuotes={fetchQuotes}
+          />
           {(isSearched || isFiltered) && (
             <small className="results">
               {isSearched && (
@@ -90,10 +95,11 @@ const QuotesDashboard = ({
               showing {hitCount} {hitCount === 1 ? "result" : "results"}
             </small>
           )}
-          <Sort
+          <Pagination
             params={params}
             setParams={setParams}
-            fetchQuotes={fetchQuotes}
+            limit={quotes.limit ? quotes.limit : 0}
+            total={hitCount}
           />
           {hitCount === 0 && Object.keys(params).length === 0 && (
             <div>

@@ -97,6 +97,7 @@ function App({
                   addQuote={addQuote}
                   mode={"add"}
                   currentQuote={currentQuote}
+                  setParams={setParams}
                 />
               </div>
             }
@@ -110,6 +111,7 @@ function App({
                 currentQuote={currentQuote}
                 fetchSingleQuote={fetchSingleQuote}
                 setCurrentQuote={setCurrentQuote}
+                setParams={setParams}
               />
             }
           ></Route>

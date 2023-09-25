@@ -1,11 +1,11 @@
 .sort-container {
-  grid-column: 2/3;
+  /* grid-column: 1/2; */
   background-color: #de9e36;
   border-radius: 10px;
   padding: 0.4rem;
   font-size: 0.75rem;
-  justify-self: end;
-  align-self: end;
+  /* justify-self: start;
+  align-self: end; */
   display: inline-block;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }

@@ -23,7 +23,7 @@ const Search = ({ params, setParams, setIsSearched }) => {
           value={searchTerm}
           onChange={(e) => {
             setSearchTerm(e.target.value);
-            setParams({ ...params, search: e.target.value });
+            setParams({ ...params, page: 1, search: e.target.value });
           }}
         ></input>
         <button type="submit">search</button>

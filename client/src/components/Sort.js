@@ -2,7 +2,7 @@ import "./Sort.css";
 
 const Sort = ({ params, setParams }) => {
   const handleSort = (e) => {
-    setParams({ ...params, sort: e.target.value });
+    setParams({ ...params, page: 1, sort: e.target.value });
   };
 
   return (
