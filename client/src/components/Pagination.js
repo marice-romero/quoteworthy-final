@@ -1,6 +1,6 @@
 import "./Pagination.css";
 
-const Pagination = ({ params, total, limit, setParams }) => {
+const Pagination = ({ params, total, setParams }) => {
   const totalPages = Math.ceil(total / 5);
 
   let pageNumbers = [];
@@ -12,24 +12,26 @@ const Pagination = ({ params, total, limit, setParams }) => {
   const handlePage = (newPage) => {
     setParams({ ...params, page: newPage });
   };
-
-  return (
-    <div className="page-container">
-      <span>go to page: </span>
-      {totalPages > 0 &&
-        pageNumbers.map((page) => (
-          <button
-            onClick={() => handlePage(page)}
-            className={
-              params.page === page ? "page-button page-active" : "page-button"
-            }
-            key={page}
-          >
-            {page}
-          </button>
-        ))}
-    </div>
-  );
+  if (totalPages > 0) {
+    return (
+      <div className="page-container">
+        <span>go to page: </span>
+        {pageNumbers.map((page) => {
+          return (
+            <button
+              onClick={() => handlePage(page)}
+              className={
+                params.page === page ? "page-button page-active" : "page-button"
+              }
+              key={page}
+            >
+              {page}
+            </button>
+          );
+        })}
+      </div>
+    );
+  }
 };
 
 export default Pagination;

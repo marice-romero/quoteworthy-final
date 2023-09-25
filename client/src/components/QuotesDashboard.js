@@ -20,6 +20,7 @@ const QuotesDashboard = ({
 }) => {
   const [isFiltered, setIsFiltered] = useState(false);
   const [isSearched, setIsSearched] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const navigate = useNavigate();
 
@@ -37,6 +38,7 @@ const QuotesDashboard = ({
     setParams({ page: 1 });
     setIsFiltered(false);
     setIsSearched(false);
+    setSearchTerm("");
   };
 
   const handleFavorites = () => {
@@ -58,6 +60,8 @@ const QuotesDashboard = ({
               setParams={setParams}
               fetchQuotes={fetchQuotes}
               setIsSearched={setIsSearched}
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
             />
 
             <Filter
