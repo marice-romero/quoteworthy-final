@@ -8,17 +8,28 @@ const QuoteContainer = ({
   setParams,
   setIsFiltered,
   setCurrentQuote,
+  editQuote,
 }) => {
   const fillEditForm = () => {
     setCurrentQuote(quote);
   };
+
+  const handleFavoriteClick = () => {
+    quote.favorite = !quote.favorite;
+    const mode = "edit favorite";
+    editQuote(quote, mode);
+  };
   return (
     <div className="quote-container">
       {!quote.favorite && (
-        <button className="favorite-button">mark as favorite</button>
+        <button className="favorite-button" onClick={handleFavoriteClick}>
+          mark as favorite
+        </button>
       )}
       {quote.favorite && (
-        <button className="favorite-button">unmark as favorite</button>
+        <button className="favorite-button" onClick={handleFavoriteClick}>
+          unmark as favorite
+        </button>
       )}
       <QuoteItem
         quote={quote}

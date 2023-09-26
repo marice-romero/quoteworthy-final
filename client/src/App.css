@@ -14,15 +14,21 @@ button {
   border-radius: 4px;
 }
 
+button:hover {
+  background-color: #bfbdc1;
+}
+
 select {
   font-family: "Special Elite";
   cursor: pointer;
   outline: none;
 }
-.cover-page {
+.wrapper {
   background-image: url("./assets/books.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+.cover-page {
   /* position: relative; */
   display: flex;
   justify-content: center;

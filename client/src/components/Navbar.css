@@ -49,3 +49,7 @@
   padding: 0.5rem;
   border: none;
 }
+
+.user-link button:hover {
+  background-color: var(--hover-color);
+}

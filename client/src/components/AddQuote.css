@@ -1,6 +1,7 @@
 .add-quote {
   margin: auto;
   margin-top: 3rem;
+  margin-bottom: 3rem;
   border: 1px black solid;
   width: 85%;
   padding: 1.5rem;
@@ -32,6 +33,10 @@
   background-color: var(--highlight-color);
 }
 
+.delete-button:hover {
+  background-color: var(--hover-color);
+}
+
 .cancel-button {
   padding: 0.5rem;
 }
@@ -43,16 +48,17 @@
   padding: 0.5rem 1rem;
   margin: 0.75rem 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid black;
   border-radius: 4px;
   box-sizing: border-box;
   font-family: "Special Elite";
 }
+
 .add-form input[type="checkbox"] {
   margin-right: 0.5rem;
   margin-top: 0.75rem;
   display: inline-block;
-  border: 1px solid #ccc;
+  /* border: 1px solid black; */
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -65,8 +71,8 @@
   cursor: pointer;
 }
 
-.add-form input[type="submit"]:hover {
-  background-color: #45a049;
+.add-form button[type="submit"]:hover {
+  background-color: var(--hover-color);
 }
 
 .add-form {

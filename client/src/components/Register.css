@@ -8,7 +8,7 @@
   width: 100%;
   margin: 0.5rem 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid black;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -16,13 +16,12 @@
 .register-form button {
   width: 100%;
   background-color: var(--highlight-color);
-  color: white;
   padding: 14px 20px;
   margin: 0.5rem 0 1rem 0;
-  border: none;
   border-radius: 4px;
   cursor: pointer;
 }
+
 .register small {
   display: block;
   margin-bottom: 0.5rem;
@@ -41,17 +40,8 @@
   text-align: center;
 }
 
-/* .register-button {
-  padding: 0.25rem;
-  width: 80%;
-  margin-bottom: 1em;
-  background-color: black;
-  border: 1px solid black;
-  color: #ececec;
-} */
-
 .register-button:hover {
-  background-color: #358856;
+  background-color: var(--hover-color);
 }
 
 /* .form input[type="text"],
