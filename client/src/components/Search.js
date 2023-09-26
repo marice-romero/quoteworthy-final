@@ -11,8 +11,6 @@ const Search = ({
     setIsSearched(true);
   }
 
-  console.log(searchTerm);
-  console.log(params);
   return (
     <div className="search-form">
       <input

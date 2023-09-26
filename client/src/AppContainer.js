@@ -14,6 +14,7 @@ const AppContainer = () => {
     favorite: false,
     tags: [],
   });
+  const [sourceTypesChecked, setSourceTypesChecked] = useState([]);
 
   const errorMessage =
     "there is a disturbance in the force - please try again later.";
@@ -87,7 +88,15 @@ const AppContainer = () => {
   // fetch quotes when params is updated
   useEffect(() => {
     const fetchQuotes = async (params) => {
+      // turn non-array params into url
       let queryParams = new URLSearchParams(params);
+      // append filter array params one by one
+      if (sourceTypesChecked) {
+        sourceTypesChecked.forEach((sourceType) =>
+          queryParams.append("sourceType", sourceType)
+        );
+      }
+
       try {
         const response = await fetch(
           `http://localhost:4001/api/v1/quotes?${queryParams}`,
@@ -123,7 +132,7 @@ const AppContainer = () => {
     if (user) {
       fetchQuotes(params);
     }
-  }, [params, user]);
+  }, [params, user, sourceTypesChecked]);
 
   // fetch single quote
   const fetchSingleQuote = async (id) => {
@@ -210,7 +219,7 @@ const AppContainer = () => {
     }
   };
 
-  const editQuote = async (quote) => {
+  const editQuote = async (quote, mode) => {
     try {
       const response = await fetch(
         `http://localhost:4001/api/v1/quotes/${quote._id}`,
@@ -231,9 +240,11 @@ const AppContainer = () => {
       );
       const data = await response.json();
       if (response.status === 200) {
-        toast.success(
-          "the quote was updated. redirecting you back to all quotes..."
-        );
+        if (mode === "edit") {
+          toast.success(
+            "the quote was updated. redirecting you back to all quotes..."
+          );
+        }
         let updatedQuotes = quotes.map((quoteItem) => {
           if (quoteItem._id === quote._id) {
             return quote;
@@ -275,6 +286,8 @@ const AppContainer = () => {
       hitCount={hitCount}
       params={params}
       setParams={setParams}
+      sourceTypesChecked={sourceTypesChecked}
+      setSourceTypesChecked={setSourceTypesChecked}
     />
   );
 };

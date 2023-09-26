@@ -84,7 +84,7 @@ const AddQuote = ({
       });
     }
     if (mode === "edit") {
-      editQuote(newQuote);
+      editQuote(newQuote, mode);
       setCurrentTags([]);
       setNewQuote({
         quoteText: "",

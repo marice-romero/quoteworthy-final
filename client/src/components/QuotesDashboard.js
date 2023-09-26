@@ -17,10 +17,42 @@ const QuotesDashboard = ({
   params,
   setParams,
   setCurrentQuote,
+  sourceTypesChecked,
+  setSourceTypesChecked,
 }) => {
   const [isFiltered, setIsFiltered] = useState(false);
   const [isSearched, setIsSearched] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [checkList, setCheckList] = useState([
+    {
+      option: "favorite",
+      checked: false,
+    },
+    {
+      option: "movie",
+      checked: false,
+    },
+    {
+      option: "TV show",
+      checked: false,
+    },
+    {
+      option: "book",
+      checked: false,
+    },
+    {
+      option: "video game",
+      checked: false,
+    },
+    {
+      option: "poem",
+      checked: false,
+    },
+    {
+      option: "other",
+      checked: false,
+    },
+  ]);
 
   const navigate = useNavigate();
 
@@ -39,11 +71,12 @@ const QuotesDashboard = ({
     setIsFiltered(false);
     setIsSearched(false);
     setSearchTerm("");
-  };
+    setSourceTypesChecked([]);
+    for (const option of checkList) {
+      option.checked = false;
+    }
 
-  const handleFavorites = () => {
-    setParams({ ...params, favorite: "true" });
-    setIsFiltered(true);
+    setCheckList([...checkList]);
   };
 
   if (user) {
@@ -51,7 +84,7 @@ const QuotesDashboard = ({
       <div className="dashboard">
         <div className="left-column">
           <div className="upper-left">
-            <h1>{user.username}'s quotes</h1>
+            <h1>my quotes</h1>
           </div>
           <div className="search-container">
             <h1>search & filter</h1>
@@ -69,16 +102,15 @@ const QuotesDashboard = ({
               setParams={setParams}
               fetchQuotes={fetchQuotes}
               setIsFiltered={setIsFiltered}
+              checkList={checkList}
+              setCheckList={setCheckList}
+              sourceTypesChecked={sourceTypesChecked}
+              setSourceTypesChecked={setSourceTypesChecked}
             />
-            <button href="#" name="favorite" onClick={handleFavorites}>
-              only show favorites
-            </button>
 
-            {(isFiltered || isSearched) && (
-              <button className="get-all-button" onClick={resetParams}>
-                get all quotes
-              </button>
-            )}
+            <button className="get-all-button" onClick={resetParams}>
+              remove all filters
+            </button>
           </div>
         </div>
 
