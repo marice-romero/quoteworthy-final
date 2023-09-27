@@ -1,0 +1,134 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 3rem;
+}
+
+.left-column {
+  grid-column: 1/2;
+}
+
+.upper-left {
+  margin-left: 10rem;
+  margin-top: 2rem;
+  border-radius: 10px;
+  border: 1rem solid white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 0.5rem;
+  background-image: url("../../../assets/books-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.upper-left h1 {
+  font-family: "Cedarville Cursive";
+  align-self: flex-start;
+  font-size: 2.5rem;
+  margin-left: 0.5rem;
+}
+
+.search-container {
+  grid-column: 1/2;
+  padding: 1rem;
+  margin-left: 10rem;
+  margin-top: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.search-container h1 {
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  background-color: #de9e36;
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.quotes-container {
+  margin-top: 2rem;
+  margin-right: 10rem;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  background-color: #474448;
+  align-self: start;
+}
+
+.results {
+  grid-column: 1/2;
+  display: inline-block;
+  margin-left: 1rem;
+  border-radius: 10px;
+  align-self: end;
+  color: white;
+  justify-self: end;
+}
+
+.quotes-list {
+  grid-column: 1/3;
+}
+
+.get-all-button {
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .dashboard {
+    display: block;
+  }
+
+  .upper-left,
+  .search-container,
+  .quotes-container,
+  .quote-container {
+    margin: 2rem 1rem;
+  }
+
+  .quote-container {
+    padding: 1rem;
+  }
+
+  .quote-container button {
+    font-size: 0.75rem;
+    padding: 0.25rem;
+  }
+
+  .source-type {
+    border: none;
+    display: block;
+  }
+
+  .tags-container {
+    margin-left: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.nothing {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 501px) and (max-width: 1000px) {
+  .dashboard {
+    display: block;
+  }
+
+  .upper-left,
+  .search-container,
+  .quotes-container,
+  .quote-container {
+    margin: 2rem 1rem;
+  }
+}
+@media (min-width: 1001px) {
+}

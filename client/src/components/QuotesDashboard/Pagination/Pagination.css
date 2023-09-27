@@ -1,0 +1,17 @@
+.page-container {
+  float: right;
+  font-size: 0.75rem;
+}
+
+.page-container span {
+  color: white;
+}
+
+.page-button {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.page-active {
+  background-color: var(--highlight-color);
+}
