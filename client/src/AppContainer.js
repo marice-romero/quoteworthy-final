@@ -23,7 +23,7 @@ const AppContainer = () => {
   const registerUser = async (newUser) => {
     try {
       const response = await fetch(
-        "http://localhost:4001/api/v1/auth/register",
+        "https://quoteworthy.onrender.com/api/v1/auth/register",
         {
           method: "POST",
           headers: {
@@ -54,16 +54,19 @@ const AppContainer = () => {
   // log in user
   const authenticateUser = async (currentUser) => {
     try {
-      const response = await fetch("http://localhost:4001/api/v1/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: currentUser.email,
-          password: currentUser.password,
-        }),
-      });
+      const response = await fetch(
+        "https://quoteworthy.onrender.com/api/v1/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: currentUser.email,
+            password: currentUser.password,
+          }),
+        }
+      );
       const data = await response.json();
       if (response.status === 200) {
         toast.success(`welcome back, ${data.user.username}`);
@@ -99,7 +102,7 @@ const AppContainer = () => {
 
       try {
         const response = await fetch(
-          `http://localhost:4001/api/v1/quotes?${queryParams}`,
+          `https://quoteworthy.onrender.com/api/v1/quotes?${queryParams}`,
           {
             method: "GET",
             headers: {
@@ -138,7 +141,7 @@ const AppContainer = () => {
   const fetchSingleQuote = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:4001/api/v1/quotes/${id}`,
+        `https://quoteworthy.onrender.com/api/v1/quotes/${id}`,
         {
           method: "GET",
           headers: {
@@ -164,20 +167,23 @@ const AppContainer = () => {
   // add quote
   const addQuote = async (quote) => {
     try {
-      const response = await fetch("http://localhost:4001/api/v1/quotes", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: JSON.stringify({
-          quoteText: quote.quoteText,
-          source: quote.source,
-          sourceType: quote.sourceType,
-          favorite: quote.favorite,
-          tags: quote.tags,
-        }),
-      });
+      const response = await fetch(
+        "https://quoteworthy.onrender.com/api/v1/quotes",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify({
+            quoteText: quote.quoteText,
+            source: quote.source,
+            sourceType: quote.sourceType,
+            favorite: quote.favorite,
+            tags: quote.tags,
+          }),
+        }
+      );
       const data = await response.json();
       if (response.status === 201) {
         toast.success("quote successfully added!");
@@ -194,7 +200,7 @@ const AppContainer = () => {
       const newQuotes = quotes.filter((quote) => id !== quote._id);
       setQuotes(newQuotes);
       const response = await fetch(
-        `http://localhost:4001/api/v1/quotes/${id}`,
+        `https://quoteworthy.onrender.com/api/v1/quotes/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -222,7 +228,7 @@ const AppContainer = () => {
   const editQuote = async (quote, mode) => {
     try {
       const response = await fetch(
-        `http://localhost:4001/api/v1/quotes/${quote._id}`,
+        `https://quoteworthy.onrender.com/api/v1/quotes/${quote._id}`,
         {
           method: "PATCH",
           headers: {
