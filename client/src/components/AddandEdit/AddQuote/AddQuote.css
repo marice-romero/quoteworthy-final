@@ -1,0 +1,97 @@
+.add-quote {
+  margin: auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border: 1px black solid;
+  width: 85%;
+  padding: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.edit-header,
+.add-quote h1 {
+  border-bottom: 1px solid black;
+}
+
+.add-quote h1,
+.add-quote h3 {
+  margin-left: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.add-quote h3 {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.delete-button {
+  float: right;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  background-color: var(--highlight-color);
+}
+
+.delete-button:hover {
+  background-color: var(--hover-color);
+}
+
+.cancel-button {
+  padding: 0.5rem;
+}
+
+.add-form input[type="text"],
+.add-form select,
+.add-form textarea {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin: 0.75rem 0;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: "Special Elite";
+}
+
+.add-form input[type="checkbox"] {
+  margin-right: 0.5rem;
+  margin-top: 0.75rem;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.add-form button[type="submit"] {
+  width: 100%;
+  background-color: var(--highlight-color);
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+.add-form button[type="submit"]:hover {
+  background-color: var(--hover-color);
+}
+
+.add-form {
+  padding: 1.5rem;
+}
+
+.input-favorite {
+  margin-bottom: 1rem;
+}
+
+.mark-favorite-label {
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 500px) {
+  .add-quote {
+    margin: 0;
+  }
+}
+@media (min-width: 501px) and (max-width: 1000px) {
+}
+@media (min-width: 1001px) {
+}

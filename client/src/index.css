@@ -1,16 +1,10 @@
 :root {
   --toastify-font-family: inherit;
+  --toastify-icon-color-success: #de9e36;
+  --toastify-icon-color-error: #de9e36;
   --text-color: black;
   --highlight-color: #de9e36;
   --background-color: #eef0f2;
   --main-div-color: #474448;
   --hover-color: #deb841;
-}
-
-input {
-  font-family: "Special Elite";
-}
-
-input:focus {
-  outline: none;
 }

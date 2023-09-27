@@ -22,14 +22,24 @@ select {
   font-family: "Special Elite";
   cursor: pointer;
   outline: none;
+  border-radius: 4px;
 }
+
+input {
+  font-family: "Special Elite";
+}
+
+input:focus {
+  outline: none;
+}
+
 .wrapper {
   background-image: url("./assets/books.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .cover-page {
-  /* position: relative; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,9 +50,9 @@ select {
 .both-container {
   margin: auto;
   width: 80%;
-  /* height: 60%; */
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .blurb-container,
@@ -60,6 +70,14 @@ select {
   justify-content: center;
 }
 
+.blurb-container {
+  width: 50%;
+}
+
+.blurb {
+  padding: 1rem;
+}
+
 .cover-page h1 {
   text-align: center;
 }
@@ -70,4 +88,70 @@ a:visited {
 
 .sign-in-container {
   height: 40%;
+}
+
+.blurb p {
+  line-height: 1.5rem;
+}
+
+.inline-logo {
+  font-family: "Cedarville Cursive";
+  color: white;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.cover-header {
+  color: var(--highlight-color);
+  margin-top: 0.5rem;
+  margin-block-end: 0;
+}
+
+.cover-header-bottom {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 0.75rem;
+  }
+  .cover-page {
+    height: auto;
+  }
+  .both-container {
+    display: block;
+  }
+
+  .blurb-container,
+  .register-container {
+    display: block;
+    width: 90%;
+    height: auto;
+    padding: 0.5rem;
+  }
+
+  .blurb-container {
+    margin-bottom: 0.5rem;
+  }
+
+  .cover-page h1 {
+    font-size: 1rem;
+  }
+
+  .sign-in-container {
+    width: 60%;
+  }
+}
+@media (min-width: 501px) and (max-width: 1000px) {
+  .both-container {
+    width: 100%;
+  }
+
+  .sign-in-container {
+    width: 80%;
+    height: auto;
+    display: block;
+  }
+}
+@media (min-width: 1001px) {
 }

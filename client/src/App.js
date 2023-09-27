@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Register from "./components/Register";
-import Login from "./components/Login";
-import QuotesDashboard from "./components/QuotesDashboard";
-import AddQuote from "./components/AddQuote";
-import ViewQuote from "./components/ViewQuote";
-import Footer from "./components/Footer";
+import Navbar from "./components/Navbar/Navbar";
+import Register from "./components/RegisterandLogin/Register";
+import Login from "./components/RegisterandLogin/Login";
+import QuotesDashboard from "./components/QuotesDashboard/QuotesDashboard/QuotesDashboard";
+import AddQuote from "./components/AddandEdit/AddQuote/AddQuote";
+import ViewQuote from "./components/AddandEdit/ViewQuote/ViewQuote";
+import Footer from "./components/Footer/Footer";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -41,19 +41,28 @@ function App({
                 <div className="cover-page">
                   <div className="both-container">
                     <div className="blurb-container">
-                      <h1>
-                        if you always find something you find{" "}
-                        <span className="logo">quoteworthy</span> ...
+                      <h1 className="cover-header">welcome to</h1>
+                      <h1 className="inline-logo">quoteworthy</h1>
+                      <h1 className="cover-header cover-header-bottom">
+                        where we love words as much as you do.
                       </h1>
+                      <div className="line"></div>
                       <div className="blurb">
-                        <p>...you're in the right place.</p>
                         <p>
-                          welcome to <span className="logo">quoteworthy</span>,
-                          a place for lovers of words
+                          whether you read it in a book, heard it in a movie, or
+                          recall some long lost lyric from that one song you
+                          heard when you were in the middle of a messy breakup,
+                          those words meant something to you.
+                        </p>
+
+                        <p>
+                          we think you should be able to find those words again,
+                          tuck them into your back pocket, and be able to pull
+                          them out, again and again.
                         </p>
                         <p>
-                          save all of your favorite quotes across all different
-                          media types in one convenient place.
+                          consider this your backpocket, and bookmark your
+                          favorite quotes all in one convenient place.
                         </p>
                       </div>
                     </div>
