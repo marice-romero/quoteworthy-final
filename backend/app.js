@@ -22,13 +22,17 @@ const quotesRouter = require("./routes/quotes");
 const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 
+const corsOptions = {
+  origin: "https://quoteworthyproject.onrender.com",
+};
+
 // middleware
 app.use(express.static("public"));
 app.set("trust proxy", 1);
 app.use(rateLimiter({ windowMs: 15 * 60 * 1000, max: 100 }));
 app.use(express.json());
 app.use(helmet());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(xss());
 
 // routes
